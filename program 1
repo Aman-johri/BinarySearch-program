@@ -1,0 +1,25 @@
+class BinarySearch {
+    public static void main(String[] args){
+        //take an sorted array
+        int[] a = { 1,2,3,4,5,6,7,8,9,10 };
+        //for binary we require lower limit , upper limit , middle limit
+        int ll = 0;
+        int ul = a.length-1;
+        int ml = (ll + ul)/2;
+        // take an element to be search
+        int ele = 6;
+        while (ll <= ul){
+            if (a[ml] == ele){
+                System.out.println("element found at" + ml + "position");
+                break;
+            }
+            else if (a[ml] < ele){
+                ll = ml + 1;
+            }
+            else{
+                ul = ml - 1;
+            }
+            ml = (ll + ul)/2;
+        }
+    }
+}
